@@ -21,5 +21,7 @@ public class Main {
 
         Alien object = (Alien) context.getBean("alien");
         object.information();
+
+        System.out.println(object.getIdentity());
     }
 }

@@ -4,7 +4,12 @@
        xsi:schemaLocation="http://www.springframework.org/schema/beans
                            http://www.springframework.org/schema/beans/spring-beans.xsd">
 
-    <!-- Bean definition for Alien class -->
-    <bean id="alien" class="org.debarshee.Alien"></bean>
+<!--        Bean definition for Alien class -->
+<!--        Singleton creates one Object and uses it multiple times.-->
+<!--        <bean id="alien" class="org.debarshee.Alien" scope="singleton"></bean>-->
+        <bean id="alien" class="org.debarshee.Alien"></bean>
+
+<!--        Prototype creates multiple Objects and uses it multiple times.-->
+<!--        <bean id="alien" class="org.debarshee.Alien" scope="prototype"></bean>-->
 
 </beans>
