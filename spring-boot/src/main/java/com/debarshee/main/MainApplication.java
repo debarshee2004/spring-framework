@@ -11,7 +11,7 @@ public class MainApplication {
 		ApplicationContext context = SpringApplication.run(MainApplication.class, args);
 		System.out.println("This is a Spring Core Application using Spring Boot.");
 
-//		Dependence Injection
+		// Dependence Injection
 		Alien object = context.getBean(Alien.class);
 		object.information();
 	}
