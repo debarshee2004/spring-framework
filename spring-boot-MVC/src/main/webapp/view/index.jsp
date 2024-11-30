@@ -3,14 +3,12 @@
 <html>
 <head>
     <meta charset="UTF-8">
-    <title>JSP Boilerplate</title>
+    <title>Home Page</title>
 </head>
 <body>
-    <h1>Welcome to Index.jsp Home Page</h1>
-
-    <form action="add">
-        Enter 1st Number: <input type="text" name="num1"><br>
-        Enter 2nd Number: <input type="text" name="num2"><br>
+    <form action="addAlien">
+        Enter your id: <input type="text" name="alien_id"><br>
+        Enter your name: <input type="text" name="alien_name"><br>
         <input type="submit">
     </form>
 </body>

@@ -3,9 +3,11 @@
 <html>
 <head>
     <meta charset="UTF-8">
-    <title>Insert title head</title>
+    <title>Result Page</title>
 </head>
 <body>
-    Result is: ${sum}
+    Welcome Back ${name}.
+    <br>
+    Result is: ${alien}
 </body>
 </html>
