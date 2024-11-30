@@ -16,7 +16,7 @@ public class Main {
         Alien object = (Alien) factory.getBean("alien");
         object.information(); */
 
-//      This is a Singleton object. That means it will only create one object per class.
+        // This is a Singleton object. That means it will only create one object per class.
         ApplicationContext context = new ClassPathXmlApplicationContext("spring.xml");
 
         Alien object = (Alien) context.getBean("alien");
