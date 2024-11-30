@@ -7,7 +7,9 @@
 <!--        Bean definition for Alien class -->
 <!--        Singleton creates one Object and uses it multiple times.-->
 <!--        <bean id="alien" class="org.debarshee.Alien" scope="singleton"></bean>-->
-        <bean id="alien" class="org.debarshee.Alien"></bean>
+        <bean id="alien" class="org.debarshee.Alien">
+                <property name="identity" value="10" ></property>
+        </bean>
 
 <!--        Prototype creates multiple Objects and uses it multiple times.-->
 <!--        <bean id="alien" class="org.debarshee.Alien" scope="prototype"></bean>-->
