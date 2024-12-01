@@ -6,14 +6,15 @@
     <title>Home Page</title>
 </head>
 <body>
-    <form action="addAlien">
+    <form action="addAlien" method="post">
         Enter your id: <input type="text" name="alien_id"><br>
         Enter your name: <input type="text" name="alien_name"><br>
         <input type="submit">
     </form>
     <hr>
-    <form action="getAlien" method="get">
-    	Enter your id : <input type="text" name="aid"><br>
+    <form action="getAliens" method="get">
+        Get all Aliens
+    	<input type="submit">
     </form>
 </body>
 </html>
