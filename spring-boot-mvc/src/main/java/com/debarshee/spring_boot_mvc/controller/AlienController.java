@@ -7,6 +7,8 @@ import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.ModelAndView;
+//import jakarta.servlet.http.HttpServletRequest;
+//import jakarta.servlet.http.HttpSession;
 
 /**
  * Controller class for handling HTTP requests in the Spring MVC application.
@@ -53,7 +55,7 @@ public class AlienController {
     ) {
 //      AlienModel alienModel = new AlienModel();
 //      alienModel.setAlien_id(alien_id);
-//      alienModel.setAlien_name(alien_name);
+//      alienModel.setAlien_name("alien", alien_name);
 
 //      model.addAttribute("alien", alienModel);
 

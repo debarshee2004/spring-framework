@@ -14,6 +14,22 @@ public class AlienModel {
     private String alien_name;
 
     /**
+     * Creates an empty controller of the Alien.
+     */
+    public AlienModel() {}
+
+    /**
+     * Gets the unique identifier of the Alien.
+     *
+     * @param alien_id the alien_id of the Alien.
+     * @param alien_name the alien_name of the Alien.
+     */
+    public AlienModel(int alien_id, String alien_name) {
+        this.alien_id = alien_id;
+        this.alien_name = alien_name;
+    }
+
+    /**
      * Gets the unique identifier of the Alien.
      *
      * @return the alien_id of the Alien.
