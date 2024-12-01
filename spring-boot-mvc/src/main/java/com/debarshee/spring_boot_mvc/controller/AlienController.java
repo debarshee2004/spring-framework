@@ -80,6 +80,15 @@ public class AlienController {
 
         System.out.println("Get Aliens was requested...");
         return "showAliens";
+    }
+
+    @GetMapping("getAlien")
+    public String getAlien(@RequestParam int alien_id, Model model)
+    {
+        List<AlienModel> aliens= Arrays.asList(new AlienModel(101,"Navin"), new AlienModel(102,"Rose"));
+        model.addAttribute("result", aliens);
+
+        return "showAliens";
 
     }
 
