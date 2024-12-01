@@ -3,10 +3,11 @@ package com.debarshee.spring_boot_mvc.controller;
 import com.debarshee.spring_boot_mvc.model.AlienModel;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
-import org.springframework.web.bind.annotation.ModelAttribute;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.*;
 import org.springframework.web.servlet.ModelAndView;
+
+import java.util.Arrays;
+import java.util.List;
 //import jakarta.servlet.http.HttpServletRequest;
 //import jakarta.servlet.http.HttpSession;
 
@@ -40,13 +41,35 @@ public class AlienController {
     }
 
     /**
+     * Handles requests to get all the Aliens.
+     * The `AlienModel` object is populated automatically using @ModelAttribute from form data.
+     *
+     * @param model the Model object for adding Attributes data.
+     * @return the name of the view (`showAliens`) to display the result.
+     */
+    @GetMapping("getAliens")
+    public String getAliens(Model model)
+    {
+        List<AlienModel> aliens = Arrays.asList(
+                new AlienModel(101, "Debarshee"),
+                new AlienModel(102, "Subhadeep")
+        );
+        model.addAttribute("result", aliens);
+
+        System.out.println("Get Aliens was requested...");
+
+        return "showAliens";
+    }
+
+    /**
      * Handles requests to add an Alien.
      * The `AlienModel` object is populated automatically using @ModelAttribute from form data.
      *
      * @param alienModel the AlienModel object containing form data.
      * @return the name of the view (`result`) to display the result.
      */
-    @RequestMapping("addAlien")
+//  @RequestMapping(value = "addAlien", method = RequestMethod.POST)
+    @PostMapping("addAlien")
     public String addAlien(
             @ModelAttribute("alien") AlienModel alienModel
 //          @RequestParam("alien_id") int alien_id,
