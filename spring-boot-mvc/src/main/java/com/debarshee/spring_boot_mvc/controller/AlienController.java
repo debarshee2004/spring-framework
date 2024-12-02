@@ -66,6 +66,8 @@ public class AlienController {
 
 //      model.addAttribute("alien", alienModel);
 
+        repository.save(alienModel);
+
         System.out.println("Alien Object was requested...");
         return "result";
     }
@@ -78,8 +80,7 @@ public class AlienController {
      * @return the name of the view (`showAliens`) to display the result.
      */
     @GetMapping("getAliens")
-    public String getAliens(Model model)
-    {
+    public String getAliens(Model model) {
 //      List<AlienModel> aliens= Arrays.asList(new AlienModel(101,"Navin"), new AlienModel(102,"Rose"));
 //      model.addAttribute("result",aliens);
 
@@ -89,14 +90,34 @@ public class AlienController {
         return "showAliens";
     }
 
+    /**
+     * Handles requests to perform GET Alien by Id.
+     *
+     * @param alien_id the id of the Alien.
+     * @param model is the Model Object.
+     * @return a ModelAndView object containing the result and view name (`result`).
+     */
     @GetMapping("getAlien")
-    public String getAlien(@RequestParam int alien_id, Model model)
-    {
-        List<AlienModel> aliens= Arrays.asList(new AlienModel(101,"Navin"), new AlienModel(102,"Rose"));
-        model.addAttribute("result", aliens);
+    public String getAlien(@RequestParam int alien_id, Model model) {
+//      List<AlienModel> aliens= Arrays.asList(new AlienModel(101,"Navin"), new AlienModel(102,"Rose"));
+//      model.addAttribute("result", aliens);
 
+        model.addAttribute("result", repository.findById(alien_id));
+
+        System.out.println("Get Alien was requested...");
         return "showAliens";
+    }
 
+    /**
+     * Handles requests to perform Delete Alien by Id.
+     *
+     * @param alien_id the id of the Alien.
+     */
+    @RequestMapping("deleteAlien")
+    public void deleteAlien(@RequestParam int alien_id) {
+        repository.deleteById(alien_id);
+
+        System.out.println("Delete Alien was requested...");
     }
 
     /**
