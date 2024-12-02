@@ -1,13 +1,18 @@
 package com.debarshee.spring_boot_mvc.model;
 
+import jakarta.persistence.*;
+
 /**
  * Represents a model class for an Alien entity in a Spring MVC application.
  * This class contains properties for an Alien's ID and name,
  * along with getter and setter methods for accessing and modifying these properties.
  */
+@Entity
+@Table(name = "alien")
 public class AlienModel {
 
     // Unique identifier for the Alien
+    @Id
     private int alien_id;
 
     // Name of the Alien

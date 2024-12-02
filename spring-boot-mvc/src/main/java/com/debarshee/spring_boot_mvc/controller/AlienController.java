@@ -1,6 +1,8 @@
 package com.debarshee.spring_boot_mvc.controller;
 
 import com.debarshee.spring_boot_mvc.model.AlienModel;
+import com.debarshee.spring_boot_mvc.repository.AlienRepository;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
@@ -17,6 +19,9 @@ import java.util.List;
  */
 @Controller
 public class AlienController {
+
+    @Autowired
+    AlienRepository repository;
 
     /**
      * Adds a global attribute to the model, accessible in all views.
@@ -75,8 +80,10 @@ public class AlienController {
     @GetMapping("getAliens")
     public String getAliens(Model model)
     {
-        List<AlienModel> aliens= Arrays.asList(new AlienModel(101,"Navin"), new AlienModel(102,"Rose"));
-        model.addAttribute("result",aliens);
+//      List<AlienModel> aliens= Arrays.asList(new AlienModel(101,"Navin"), new AlienModel(102,"Rose"));
+//      model.addAttribute("result",aliens);
+
+        model.addAttribute("result", repository.findAll());
 
         System.out.println("Get Aliens was requested...");
         return "showAliens";
