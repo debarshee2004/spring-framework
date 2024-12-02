@@ -8,11 +8,6 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.servlet.ModelAndView;
 
-import java.util.Arrays;
-import java.util.List;
-//import jakarta.servlet.http.HttpServletRequest;
-//import jakarta.servlet.http.HttpSession;
-
 /**
  * Controller class for handling HTTP requests in the Spring MVC application.
  * This class manages routes for adding Aliens, performing addition operations, and rendering views.
@@ -103,6 +98,21 @@ public class AlienController {
 //      model.addAttribute("result", aliens);
 
         model.addAttribute("result", repository.findById(alien_id));
+
+        System.out.println("Get Alien was requested...");
+        return "showAliens";
+    }
+
+    /**
+     * Handles requests to perform GET Alien by Name.
+     *
+     * @param alien_name the name of the Alien.
+     * @param model is the Model Object.
+     * @return a ModelAndView object containing the result and view name (`result`).
+     */
+    @GetMapping("getAlienByName")
+    public String getAlienByName(@RequestParam String alien_name, Model model) {
+        model.addAttribute("result", repository.find(alien_name));
 
         System.out.println("Get Alien was requested...");
         return "showAliens";

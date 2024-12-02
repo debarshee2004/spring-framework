@@ -25,6 +25,12 @@
      	<input type="submit">
   	</form>
   	<hr>
+    <h2>Fetch Object by name from the Database</h2>
+    <form action="getAlienByName" method="get">
+        Enter your id : <input type="text" name="alien_name"><br>
+     	<input type="submit">
+  	</form>
+  	<hr>
   	<h2>Delete Object by id from the Database</h2>
     <form action="deleteAlien">
         Enter your id : <input type="text" name="alien_id"><br>
