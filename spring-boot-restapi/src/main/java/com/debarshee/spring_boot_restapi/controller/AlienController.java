@@ -14,7 +14,7 @@ public class AlienController {
     AlienRepository repository;
 
     @PostMapping("alien")
-    public AlienModel addAlien(AlienModel alienModel) {
+    public AlienModel addAlien(@RequestBody AlienModel alienModel) {
         repository.save(alienModel);
         return alienModel;
     }
